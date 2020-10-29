@@ -1,0 +1,63 @@
+/*Inspiration page*/
+#permission{
+ text-align: center;  
+}
+
+.insp-object {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: max-content;
+  width: 40%;
+  margin: 20px;
+}
+
+.insp-object:hover{
+transform: scale(1.05);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
+}
+
+.insp-img{
+    width: 100%;
+}
+
+.insp-descr {
+  border: 1px rgb(165, 165, 165) solid;
+  padding: 10px;
+}
+
+/*styla p-element inom insp-descr*/
+.insp-descr p {
+  font-size: 1.5rem;
+}
+
+/*styla a-element inom insp-descr*/
+.insp-descr a {
+  text-decoration: none;
+  color: black;
+}
+
+/*förtydliga att det är en länk genom att visa underline när muspekaren ligger över*/
+.insp-descr a:hover {
+  text-decoration: underline;
+}
+
+/*Gör sidan anpassad för mindre skärmar*/
+@media screen and (max-width: 600px) {
+    .insp-object{
+        width: 70%;
+    }
+    
+    .insp-descr p{
+        font-size: 1rem;
+    }
+
+    .insp-descr a{
+        font-size: 0.9rem;
+        /*text-decoration adderas då hover-funktionen ej fungerar på mobilskärm*/
+        text-decoration: underline;
+    }
+    #permission{
+        font-size: 0.6rem;
+    }
+}

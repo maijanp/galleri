@@ -1,0 +1,46 @@
+.aboutme{
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+    justify-content:center;
+    margin: auto;
+}
+
+#me-img {
+    width: 30%;
+  }
+  
+  .presentation {
+    display: flex;
+    /*display column för att positionera innehållet i container uppifrån och ner, istället för från vänster till höger*/
+    flex-direction: column;
+    align-items: baseline;
+    width: 40%;
+    margin: 2rem;
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+
+  /*Gör sidan mobilanpassad och strukturerar om innehållet*/
+  @media screen and (max-width: 600px) {
+      .aboutme{
+          /*anger column för att positionera innehållet i containern uppifrån och ner i mobilläge*/
+          flex-direction: column;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .presentation{
+          /*förstora i mobilläge*/
+          width: 90%;
+          font-size: 1em;
+      }
+
+      #me-img{
+          /*förstora bild i mobilläge*/
+          width: 90%;
+      }
+  }

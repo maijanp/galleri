@@ -1,0 +1,129 @@
+/*För att räkna in padding samt border i bredd och höjd på ALLT*/
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: quicksand, sans-serif;
+}
+
+header {
+  /*använder flexbox för att positionera och manipulera behållaren*/
+  display: flex;
+  /*Centrerar innehållet längs med "the cross axis*/
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  /*centrerar innehållet längs med "the main axis"*/
+  justify-content: center;
+}
+
+header h1 {
+  margin-left: 20px;
+}
+
+.logo {
+  /*logotypen tar upp  13% av skärmens yta*/
+  width: 13vw;
+}
+nav {
+  display: flex;
+  /*definierar riktningen på innehållet i behållaren*/
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nav-link,
+.current {
+  text-decoration: none;
+  padding: 2%;
+  /*anger i fontstorlek rem för att utgå från standardstorleken på HELA hemsidan*/
+  font-size: 1.5rem;
+  color: black;
+}
+
+.current {
+  color: rgb(163, 7, 72);
+}
+
+main {
+  /*använder flexbox för att effektivt positionera innehållet i main och kontrollera hur elementen interagerar med varandra*/
+  display: flex;
+  width: 80%;
+  /*anger margin auto för att centrera main*/
+  margin: auto;
+  /*anger riktning och wrapvärde i en declaration. Wrap anges för att tillämpa radbrytning vid behov*/
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.art-item {
+  width: 30%;
+  margin: 30px 10px;
+  text-align: center;
+}
+.art-img {
+  width: 100%;
+}
+
+.art-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.083);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+a:active {
+  color: pink;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+/*Media-queries används här för att anpassa det globala innehållet även till mindre skärmar
+Nedanstående kod säger till browsern att OM skärmen är MAX 600px, bete dig så som är angivet här. Om inte; presentera innehållet som det är angivet utanför media-query.*/
+@media screen and (max-width: 600px) {
+  .art-item {
+    width: 70%;
+    font-size: 9px;
+    letter-spacing: 0.1rem;
+    margin: 0.5rem;
+  }
+  main {
+    width: 100%;
+  }
+  header {
+    font-size: 0.5rem;
+  }
+  .nav-link,
+  .current {
+    font-size: 0.8rem;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+  nav {
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
